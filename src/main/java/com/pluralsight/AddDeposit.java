@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class AddDeposit {
-    static String csvfile = "transactions.csv";
+
     static DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     static DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
@@ -42,7 +42,7 @@ public class AddDeposit {
         );
 
         try {
-            FileWriter fileWriter = new FileWriter(csvfile, true);
+            FileWriter fileWriter = new FileWriter(Config.TRANSACTIONS_FILE, true);
             fileWriter.write(date + "|" + time + "|" + description + "|" + vendor + "|" + amount + "\n");
             fileWriter.close();
             System.out.println("\nDeposit saved successfully!");

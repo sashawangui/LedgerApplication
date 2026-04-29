@@ -8,7 +8,6 @@ import java.util.Scanner;
 
 public class MakePayment {
 
-    static String csvFile = "transactions.csv";
     static DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     static DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
@@ -45,7 +44,7 @@ public class MakePayment {
 
         // Write to CSV file
         try {
-            FileWriter fileWriter = new FileWriter(csvFile, true);
+            FileWriter fileWriter = new FileWriter(Config.TRANSACTIONS_FILE, true);
             fileWriter.write(date + "|" + time + "|" + description + "|" + vendor + "|" + amount + "\n");
             fileWriter.close();
             System.out.println("\nPayment saved successfully!");
