@@ -28,6 +28,25 @@ public class LedgerScreen {
             System.out.print("Enter your choice: ");
 
             choice = input.nextLine().trim();
+
+            switch (choice.toUpperCase()) {
+                case "A":
+                    displayTransactions(newToOldTransactions());
+                    break;
+                case "D":
+                    displayDeposits(newToOldTransactions());
+                    break;
+                case "P":
+                    displayPayments(newToOldTransactions());
+                    break;
+//                case "R":
+//
+//                    break;
+                case "H":
+                    break;
+                default:
+                    System.out.println("\nInvalid option. Please enter A, D, P, R, or H.");
+            }
         }
     }
 
@@ -40,6 +59,7 @@ public class LedgerScreen {
         try {
             BufferedReader reader = new BufferedReader(new FileReader(csvfile));
             reader.readLine(); //skip the header line, don't include it in my transactions array
+
             String line = reader.readLine();
 
             while (line != null) {
