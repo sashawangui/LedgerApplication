@@ -72,6 +72,9 @@ public class LedgerScreen {
                 double amount = Double.parseDouble(columns[4]);
 
                 transactions.add(new Transaction(date, time, description, vendor, amount));
+
+                //read line after line for it to actually loop, until null
+                line = reader.readLine();
             }
 
             reader.close();
