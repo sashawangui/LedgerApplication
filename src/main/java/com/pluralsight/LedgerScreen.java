@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class LedgerScreen {
     //calling it here so it's accessible throughout the file
-    // also adding static because it's not an instance variable
+    // also adding static because it's not really an instance variable
     static String csvfile = "transactions.csv";
 
     public static void ledgerScreen(Scanner input) {
@@ -39,6 +39,7 @@ public class LedgerScreen {
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(csvfile));
+            reader.readLine(); //skip the header line, don't include it in my transactions array
             String line = reader.readLine();
 
             while (line != null) {

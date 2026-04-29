@@ -30,7 +30,7 @@ public class MakePayment {
             amount = -amount;
         }
 
-        // Grab current date and time automatically
+        // Grab current date and time automatically from the system
         String date = LocalDate.now().format(dateFormatter);
         String time = LocalTime.now().format(timeFormatter);
 
