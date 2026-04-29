@@ -27,15 +27,15 @@ public class Reports{
                 case "1":
                     monthToDate();
                     break;
-//                case "2":
-//                    previousMonth();
-//                    break;
-//                case "3":
-//                    yearToDate();
-//                    break;
-//                case "4":
-//                    previousYear();
-//                    break;
+                case "2":
+                    previousMonth();
+                    break;
+                case "3":
+                    yearToDate();
+                    break;
+                case "4":
+                    previousYear();
+                    break;
 //                case "5":
 //                    searchByVendor(scanner);
 //                    break;
@@ -69,6 +69,38 @@ public class Reports{
         System.out.println("\n---------- Month To Date ----------");
         for (Transaction transaction : filterByDate(start,end)){
             System.out.println(transaction);
+        }
+    }
+
+    public static void previousMonth() {
+        LocalDate start = LocalDate.now().minusMonths(1).withDayOfMonth(1);
+        LocalDate end   = LocalDate.now().minusMonths(1).withDayOfMonth(
+                LocalDate.now().minusMonths(1).lengthOfMonth());
+
+        System.out.println("\n---------- Previous Month ----------");
+        for (Transaction t : filterByDate(start, end)) {
+            System.out.println(t);
+        }
+    }
+
+    public static void yearToDate() {
+        LocalDate start = LocalDate.now().withDayOfYear(1);
+        LocalDate end   = LocalDate.now();
+
+        System.out.println("\n---------- Year To Date ----------");
+        for (Transaction t : filterByDate(start, end)) {
+            System.out.println(t);
+        }
+    }
+
+    public static void previousYear() {
+        LocalDate start = LocalDate.now().minusYears(1).withDayOfYear(1);
+        LocalDate end   = LocalDate.now().minusYears(1).withDayOfYear(
+                LocalDate.now().minusYears(1).lengthOfYear());
+
+        System.out.println("\n---------- Previous Year ----------");
+        for (Transaction t : filterByDate(start, end)) {
+            System.out.println(t);
         }
     }
 }
