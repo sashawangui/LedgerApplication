@@ -38,9 +38,9 @@ public class LedgerScreen {
                 case "P":
                     displayPayments(newToOldTransactions());
                     break;
-//                case "R":
-//
-//                    break;
+                case "R":
+                    Reports.displayReportsScreen(input);
+                    break;
                 case "H":
                     break;
                 default:
