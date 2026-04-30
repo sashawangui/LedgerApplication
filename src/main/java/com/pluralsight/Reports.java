@@ -109,9 +109,9 @@ public class Reports{
         String vendorName = input.nextLine().trim();
 
         System.out.println("\n---------- Vendor: " + vendorName + " ----------");
-        for (Transaction t : LedgerScreen.newToOldTransactions()) {
-            if (t.getVendor().toLowerCase().contains(vendorName.toLowerCase())) {
-                System.out.println(t);
+        for (Transaction transaction : LedgerScreen.newToOldTransactions()) {
+            if (transaction.getVendor().toLowerCase().contains(vendorName.toLowerCase())) {
+                System.out.println(transaction);
             }
         }
     }

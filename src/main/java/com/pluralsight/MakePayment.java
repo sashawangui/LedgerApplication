@@ -3,21 +3,14 @@ package com.pluralsight;
 import java.io.FileWriter;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class MakePayment {
 
-    static DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-    static DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
     public static void makePayment(Scanner input) {
 
         System.out.println("\n---------- Make Payment ----------");
-
-        // Grab current date and time automatically from the system
-        String date = LocalDate.now().format(dateFormatter);
-        String time = LocalTime.now().format(timeFormatter);
 
         System.out.print("Description: ");
         String description = input.nextLine().trim();
@@ -45,7 +38,8 @@ public class MakePayment {
         // Write to CSV file
         try {
             FileWriter fileWriter = new FileWriter(Config.TRANSACTIONS_FILE, true);
-            fileWriter.write(date + "|" + time + "|" + description + "|" + vendor + "|" + amount + "\n");
+            //use constructors to build transaction object according to CSV order
+            fileWriter.write(LocalDate.now() + "|" + LocalTime.now() + "|" + transaction.getDescription() + "|" + transaction.getVendor() + "|" + transaction.getAmount() + "\n");
             fileWriter.close();
             System.out.println("\nPayment saved successfully!");
         } catch (Exception e) {

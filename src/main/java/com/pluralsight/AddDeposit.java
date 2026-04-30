@@ -1,15 +1,11 @@
 package com.pluralsight;
 
 import java.io.FileWriter;
-import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class AddDeposit {
-
-    static DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-    static DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
     public static void makeDeposit(Scanner input){
         System.out.println("\n ---------- Make a deposit ----------");
@@ -28,8 +24,6 @@ public class AddDeposit {
         }
 
         // I don't want the date and time to belong to every instance of transaction, so I'll call them separately
-        String date = LocalDate.now().format(dateFormatter);
-        String time = LocalTime.now().format(timeFormatter);
 
         //Build transaction object
         Transaction transaction = new Transaction(
@@ -42,7 +36,7 @@ public class AddDeposit {
 
         try {
             FileWriter fileWriter = new FileWriter(Config.TRANSACTIONS_FILE, true);
-            fileWriter.write(date + "|" + time + "|" + description + "|" + vendor + "|" + amount + "\n");
+            fileWriter.write(LocalDate.now() + "|" + LocalTime.now() + "|" + transaction.getDescription() + "|" + transaction.getVendor() + "|" + transaction.getAmount() + "\n");
             fileWriter.close();
             System.out.println("\nDeposit saved successfully!");
         } catch (Exception e) {
