@@ -39,8 +39,8 @@ public class Reports{
 //                case "5":
 //                    searchByVendor(scanner);
 //                    break;
-//                case "0":
-//                    break;
+                case "0":
+                    break;
                 default:
                     System.out.println("\nInvalid option. Please enter 1, 2, 3, 4, 5, or 0.");
             }
@@ -101,6 +101,18 @@ public class Reports{
         System.out.println("\n---------- Previous Year ----------");
         for (Transaction t : filterByDate(start, end)) {
             System.out.println(t);
+        }
+    }
+
+    public static void searchByVendor(Scanner input) {
+        System.out.print("\nEnter vendor name: ");
+        String vendorName = input.nextLine().trim();
+
+        System.out.println("\n---------- Vendor: " + vendorName + " ----------");
+        for (Transaction t : LedgerScreen.newToOldTransactions()) {
+            if (t.getVendor().toLowerCase().contains(vendorName.toLowerCase())) {
+                System.out.println(t);
+            }
         }
     }
 }
