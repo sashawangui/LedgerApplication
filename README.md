@@ -6,7 +6,7 @@
 
 ## Features
 ### Home Screen
-- This is the entry point of the app and the file through which the app runs until the user choses to exit.
+- This is the entry point of the app and the file through which the app runs until the user chooses to exit.
 - It lets you;
   - Add deposits 
   - Make a Payment
@@ -59,3 +59,24 @@ public boolean isDeposit() { return amount > 0; }
 public boolean isPayment() { return amount < 0; }
 ```
 
+## Some things I learned
+### LocalDate.now()
+- Using the inbuilt methods under LocalDate helped me learn a lot about the different applications 
+e.g. when servers run in different time zones from the user, when testing and using fake dates, etc
+
+### Streams
+- While building the ledger filters I used traditional for loops, but I learned that Java 8 introduced 
+- Streams as the modern alternative. A stream is essentially an assembly line for processing collections
+
+### Levenshtein Distance Algorithm
+- When building the vendor search I used contains() for partial matching, but I looked into what true 
+typo-tolerant search would look like.
+- You would essentially set a threshold; if the user's string is within threshold distance of the actual 
+string, then the algorithm would treat it as a match.
+
+
+## How to Run
+1. Clone the repository
+2. Open in IntelliJ IDEA
+3. Run HomeScreen.java
+4. Make sure transactions.csv is in the root of the project directory
