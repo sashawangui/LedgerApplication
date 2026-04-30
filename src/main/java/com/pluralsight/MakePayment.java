@@ -15,6 +15,10 @@ public class MakePayment {
 
         System.out.println("\n---------- Make Payment ----------");
 
+        // Grab current date and time automatically from the system
+        String date = LocalDate.now().format(dateFormatter);
+        String time = LocalTime.now().format(timeFormatter);
+
         System.out.print("Description: ");
         String description = input.nextLine().trim();
 
@@ -28,10 +32,6 @@ public class MakePayment {
         if (amount > 0) {
             amount = -amount;
         }
-
-        // Grab current date and time automatically from the system
-        String date = LocalDate.now().format(dateFormatter);
-        String time = LocalTime.now().format(timeFormatter);
 
         // Build the Transaction object
         Transaction transaction = new Transaction(

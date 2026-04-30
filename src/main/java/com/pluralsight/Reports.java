@@ -36,9 +36,9 @@ public class Reports{
                 case "4":
                     previousYear();
                     break;
-//                case "5":
-//                    searchByVendor(scanner);
-//                    break;
+                case "5":
+                    searchByVendor(input);
+                    break;
                 case "0":
                     break;
                 default:

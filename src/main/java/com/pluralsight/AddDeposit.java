@@ -24,11 +24,10 @@ public class AddDeposit {
         double amount = Double.parseDouble(input.nextLine().trim());
 
         // If user entered a negative, flip it to positive
-        if (amount < 0) {
-            amount = Math.abs(amount);
+        if (amount < 0) { amount = Math.abs(amount);
         }
 
-        // I don't want the date and time to belong to every instance of transaction, so I'll call them seperately
+        // I don't want the date and time to belong to every instance of transaction, so I'll call them separately
         String date = LocalDate.now().format(dateFormatter);
         String time = LocalTime.now().format(timeFormatter);
 
