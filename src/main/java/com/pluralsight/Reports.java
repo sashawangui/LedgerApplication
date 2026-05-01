@@ -12,7 +12,7 @@ public class Reports{
 
         while (!choice.equals("0")) {
 
-            System.out.println("\n========== Reports ==========");
+            System.out.println("\n========== View your Reports ==========");
             System.out.println("1) Month To Date");
             System.out.println("2) Previous Month");
             System.out.println("3) Year To Date");

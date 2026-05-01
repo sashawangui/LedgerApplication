@@ -22,10 +22,10 @@ public class HomeScreen {
 
             switch (choice.toUpperCase()) {
                 case "D":
-                    AddDeposit.makeDeposit(scanner);
+                    TransactionTypes.makeDeposit(scanner);
                     break;
                 case "P":
-                    MakePayment.makePayment(scanner);
+                    TransactionTypes.makePayment(scanner);
                     break;
                 case "L":
                   LedgerScreen.ledgerScreen(scanner);

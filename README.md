@@ -1,5 +1,4 @@
-# CashFlow
-### A Java CLI Accounting Ledger Application
+# CASHFLOW 🌊 - <sub> For breezy money handling</sub>
 
 - A CLI application that helps you make and track deposits and payments, as well as view a full ledger and run date-based or vendor-based reports. 
 - All transactions are stored in a CSV file.

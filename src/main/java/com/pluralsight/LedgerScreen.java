@@ -96,7 +96,7 @@ public class LedgerScreen {
 
     //created isDeposit and isPayment to filter which is which for the next two methods
     public static void displayDeposits(ArrayList<Transaction> transactions) {
-        System.out.println("\n---------- Deposits ----------");
+        System.out.println("\n---------- Displaying Deposits ----------");
         for (Transaction transaction : transactions) {
             if (transaction.isDeposit()) {
                 System.out.println(transaction);
@@ -105,7 +105,7 @@ public class LedgerScreen {
     }
 
     public static void displayPayments(ArrayList<Transaction> transactions) {
-        System.out.println("\n---------- Payments ----------");
+        System.out.println("\n---------- Displaying Payments ----------");
         for (Transaction transaction : transactions) {
             if (transaction.isPayment()) {
                 System.out.println(transaction);
