@@ -47,7 +47,8 @@
 ### Config.java — Centralized Configuration
 - One design decisions I made was creating a dedicated `Config.java` file to store the CSV file path as a constant 
 rather than hardcoding `"transactions.csv"` in every file that needs it.
-- 
+- It led me to learn about config/properties files that enable one to edit file paths without having to 
+hard code anything.
 
 
 ```java
@@ -56,7 +57,7 @@ public class Config {
 }
 ```
 
-### isDeposit() and isPayment() — Clean Object Helpers
+### isDeposit() and isPayment() — Helper  methods in my object class
 - Rather than scattering `amount > 0` checks throughout the codebase, 
 these helpers live on the `Transaction` object itself.
 
@@ -74,7 +75,8 @@ cleaner records, and utilized that in my constructor instead of hardcoding it in
 
 ### Streams
 - While building the ledger filters I used traditional for loops, but I learned that Java 8 introduced 
-- Streams as the modern alternative. A stream is essentially an assembly line for processing collections
+streams as a newer alternative. A stream is essentially an assembly line for processing collections 
+(built-in library for processing arrays)
 
 ### Levenshtein Distance Algorithm
 - When building the vendor search I used the 'contains()' method for partial matching, but I looked into what true 

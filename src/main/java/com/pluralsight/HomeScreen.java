@@ -30,6 +30,8 @@ public class HomeScreen {
                 case "L":
                   LedgerScreen.ledgerScreen(scanner);
                     break;
+                case "X":
+                    return;
                 default:
                     System.out.println("\nInvalid option. Please enter D, P, L, or X.");
             }

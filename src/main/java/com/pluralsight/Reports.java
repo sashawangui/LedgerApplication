@@ -49,7 +49,7 @@ public class Reports{
 
     // Shared date filter
     // found that I'd need it for the next couple methods, so I might as well have it separate
-    public static ArrayList<Transaction> filterByDate(LocalDate start, LocalDate end) {
+    public static ArrayList<Transaction> filterDate(LocalDate start, LocalDate end) {
         ArrayList<Transaction> allTransactions = LedgerScreen.newToOldTransactions();
         ArrayList<Transaction> results = new ArrayList<>();
 
@@ -67,7 +67,7 @@ public class Reports{
         LocalDate end = LocalDate.now();
 
         System.out.println("\n---------- Month To Date ----------");
-        for (Transaction transaction : filterByDate(start,end)){
+        for (Transaction transaction : filterDate(start,end)){
             System.out.println(transaction);
         }
     }
@@ -78,7 +78,7 @@ public class Reports{
                 LocalDate.now().minusMonths(1).lengthOfMonth());
 
         System.out.println("\n---------- Previous Month ----------");
-        for (Transaction t : filterByDate(start, end)) {
+        for (Transaction t : filterDate(start, end)) {
             System.out.println(t);
         }
     }
@@ -88,7 +88,7 @@ public class Reports{
         LocalDate end   = LocalDate.now();
 
         System.out.println("\n---------- Year To Date ----------");
-        for (Transaction t : filterByDate(start, end)) {
+        for (Transaction t : filterDate(start, end)) {
             System.out.println(t);
         }
     }
@@ -99,7 +99,7 @@ public class Reports{
                 LocalDate.now().minusYears(1).lengthOfYear());
 
         System.out.println("\n---------- Previous Year ----------");
-        for (Transaction t : filterByDate(start, end)) {
+        for (Transaction t : filterDate(start, end)) {
             System.out.println(t);
         }
     }
