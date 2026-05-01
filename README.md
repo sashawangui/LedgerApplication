@@ -60,16 +60,18 @@ public boolean isPayment() { return amount < 0; }
 ```
 
 ## Some things I learned
-### LocalDate.now()
+### LocalDate.now() / LocalTime.now() 
 - Using the inbuilt methods under LocalDate helped me learn a lot about the different applications 
 e.g. when servers run in different time zones from the user, when testing and using fake dates, etc
+- I also learned that it grabs down to the nanosecond and implemented using the nano() method to make
+cleaner records, and utilized that in my constructor instead of hardcoding it into all my code.
 
 ### Streams
 - While building the ledger filters I used traditional for loops, but I learned that Java 8 introduced 
 - Streams as the modern alternative. A stream is essentially an assembly line for processing collections
 
 ### Levenshtein Distance Algorithm
-- When building the vendor search I used contains() for partial matching, but I looked into what true 
+- When building the vendor search I used the 'contains()' method for partial matching, but I looked into what true 
 typo-tolerant search would look like.
 - You would essentially set a threshold; if the user's string is within threshold distance of the actual 
 string, then the algorithm would treat it as a match.

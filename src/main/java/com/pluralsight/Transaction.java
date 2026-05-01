@@ -12,7 +12,7 @@ public class Transaction {
 
     public Transaction(LocalDate date, LocalTime time, String description, String vendor, double amount) {
         this.date = date;
-        this.time = time;
+        this.time = time.withNano(0);
         this.description = description;
         this.vendor = vendor;
         this.amount = amount;
