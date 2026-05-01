@@ -4,6 +4,12 @@
 - A CLI application that helps you make and track deposits and payments, as well as view a full ledger and run date-based or vendor-based reports. 
 - All transactions are stored in a CSV file.
 
+## Table of Contents
+- [Features](#features)
+- [Interesting Code](#interesting-code)
+- [What I Learned](#some-things-i-learned)
+- [How to Run](#how-to-run)
+
 ## Features
 ### Home Screen
 - This is the entry point of the app and the file through which the app runs until the user chooses to exit.
@@ -76,6 +82,11 @@ typo-tolerant search would look like.
 - You would essentially set a threshold; if the user's string is within threshold distance of the actual 
 string, then the algorithm would treat it as a match.
 
+## Technologies Used
+- **Java** — core language
+- **Maven** — project build and dependency management
+- **IntelliJ IDEA** — IDE
+- **Git & GitHub** — version control and repository hosting
 
 ## How to Run
 1. Clone the repository
