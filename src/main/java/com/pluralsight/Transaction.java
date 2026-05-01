@@ -12,13 +12,15 @@ public class Transaction {
 
     public Transaction(LocalDate date, LocalTime time, String description, String vendor, double amount) {
         this.date = date;
+        //the method was grabbing down to the nanosecond, so I got rid of that in here
+        //now this will be applicable to every instance of transaction that I will create
         this.time = time.withNano(0);
         this.description = description;
         this.vendor = vendor;
         this.amount = amount;
     }
 
-    // make filters to decipher whether a transaction is a deposit or a payment
+    // make helper methods to decipher whether a transaction is a deposit or a payment
     public boolean isDeposit() {return amount > 0;}
 
     public boolean isPayment() {return amount < 0;}

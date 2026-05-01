@@ -18,7 +18,7 @@ public class LedgerScreen {
 
         while (!choice.equalsIgnoreCase("H")) {
 
-            System.out.println("\n========== Ledger ==========");
+            System.out.println("\n========== Ledger ===========");
             System.out.println("A) All Transactions");
             System.out.println("D) Deposits");
             System.out.println("P) Payments");
@@ -70,6 +70,7 @@ public class LedgerScreen {
                 String vendor = columns[3];
                 double amount = Double.parseDouble(columns[4]);
 
+                //create the ArrayList instances of Transaction(s)
                 transactions.add(new Transaction(date, time, description, vendor, amount));
 
                 //read line after line for it to actually loop, until null
@@ -82,8 +83,10 @@ public class LedgerScreen {
             System.out.println("\nError: " + e.getMessage());
         }
 
-        // Reverse so newest entries show first
+        // call the inbuilt reverse method on my array so newest entries show first
         Collections.reverse(transactions);
+
+        //return the array, now reversed
         return transactions;
     }
 

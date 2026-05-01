@@ -9,8 +9,10 @@ public class HomeScreen {
         Scanner scanner = new Scanner(System.in);
         String choice = "";
 
-        while (!choice.equalsIgnoreCase("X")) {
 
+
+        while (!choice.equalsIgnoreCase("X")) {
+            System.out.println("---------------Welcome to CashFlow!---------------");
             System.out.println("\n========== Account Ledger ==========");
             System.out.println("D) Add Deposit");
             System.out.println("P) Make Payment (Debit)");

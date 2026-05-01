@@ -50,9 +50,13 @@ public class Reports{
     // Shared date filter
     // found that I'd need it for the next couple methods, so I might as well have it separate
     public static ArrayList<Transaction> filterDate(LocalDate start, LocalDate end) {
+        //new array: I've called newToOld method from LedgerScreen class on it
         ArrayList<Transaction> allTransactions = LedgerScreen.newToOldTransactions();
+
+        // new array to add the filtered results to
         ArrayList<Transaction> results = new ArrayList<>();
 
+        //since start and end are shared parameters, it makes sense to create this, then define the argument in individual methods
         for (Transaction t : allTransactions) {
             if (!t.getDate().isBefore(start) && !t.getDate().isAfter(end)) {
                 results.add(t);

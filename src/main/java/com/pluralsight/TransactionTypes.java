@@ -19,11 +19,9 @@ public class TransactionTypes {
         System.out.print("Amount: ");
         double amount = Double.parseDouble(input.nextLine().trim());
 
-        // If user entered a negative, flip it to positive
+        // auto-check if user entered a negative, flip it to positive
         if (amount < 0) { amount = Math.abs(amount);
         }
-
-        // I don't want the date and time to belong to every instance of transaction, so I'll call them separately
 
         //Build transaction object
         Transaction transaction = new Transaction(
@@ -36,6 +34,8 @@ public class TransactionTypes {
 
         try {
             FileWriter fileWriter = new FileWriter(Config.TRANSACTIONS_FILE, true);
+
+            //write to csv file; pay attention to order of properties in the csv
             fileWriter.write(LocalDate.now() + "|" + LocalTime.now() + "|" + transaction.getDescription() + "|" + transaction.getVendor() + "|" + transaction.getAmount() + "\n");
             fileWriter.close();
             System.out.println("\nDeposit saved successfully!");
