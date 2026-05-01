@@ -9,10 +9,10 @@ public class HomeScreen {
         Scanner scanner = new Scanner(System.in);
         String choice = "";
 
-
+        System.out.println("---------------Welcome to CashFlow!---------------");
 
         while (!choice.equalsIgnoreCase("X")) {
-            System.out.println("---------------Welcome to CashFlow!---------------");
+
             System.out.println("\n========== Account Ledger ==========");
             System.out.println("D) Add Deposit");
             System.out.println("P) Make Payment (Debit)");
@@ -33,6 +33,7 @@ public class HomeScreen {
                   LedgerScreen.ledgerScreen(scanner);
                     break;
                 case "X":
+                    System.out.println("Godspeed!");
                     return;
                 default:
                     System.out.println("\nInvalid option. Please enter D, P, L, or X.");

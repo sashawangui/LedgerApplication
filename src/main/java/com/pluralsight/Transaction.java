@@ -10,11 +10,11 @@ public class Transaction {
     private String vendor;
     private double amount;
 
+    //the method was grabbing down to the nanosecond, so I got rid of that in here
+    //now this will be applicable to every instance of transaction that I will create
     public Transaction(LocalDate date, LocalTime time, String description, String vendor, double amount) {
         this.date = date;
-        //the method was grabbing down to the nanosecond, so I got rid of that in here
-        //now this will be applicable to every instance of transaction that I will create
-        this.time = time.withNano(0);
+        this.time = time.withSecond(0);
         this.description = description;
         this.vendor = vendor;
         this.amount = amount;
